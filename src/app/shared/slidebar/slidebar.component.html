@@ -1,0 +1,23 @@
+<ul class="nav nav-list">
+    <li class="active">
+      <a><i class="fa fa-home"></i> Trang chủ</a>
+      <b class="arrow"></b>
+    </li>
+    <li class="" *ngFor="let item of functions">
+      <a class="dropdown-toggle">
+        <i class="fa {{item.IconCss}} "></i> {{item.Name}}
+        <b *ngIf="item.ChildFunctions.length>0" class="arrow fa fa-angle-down"></b>
+      </a>
+      <b class="arrow"></b>
+      <ul class="submenu">
+        <li class="" *ngFor="let subItem of item.ChildFunctions">
+          <a routerLink="{{subItem.URL}}" routerLinkActive="active">{{subItem.Name}}</a>
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
+  </ul><!-- /.nav-list -->
+  
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+      <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
